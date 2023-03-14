@@ -6,7 +6,19 @@ const Board = () => {
   const canvasRef = useRef(null)
 
   useEffect(() => {
-    const canvas = new fabric.Canvas(canvasRef.current, {})
+    const canvas = new fabric.Canvas(canvasRef.current, {
+      backgroundColor: `#dcdde1`
+    })
+
+    const circle = new fabric.Circle({
+      radius: 20,
+      fill: `#009432`,
+      left: 50,
+      right: 50,
+      top: 50,
+    })
+
+    canvas.add(circle)
   }, [])
 
   return (
