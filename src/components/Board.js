@@ -7,7 +7,9 @@ const Board = () => {
 
   useEffect(() => {
     const canvas = new fabric.Canvas(canvasRef.current, {
-      backgroundColor: `#dcdde1`
+      backgroundColor: `#dcdde1`,
+      width: 1290,
+      height: 500,
     })
 
     const circle = new fabric.Circle({
@@ -22,7 +24,7 @@ const Board = () => {
   }, [])
 
   return (
-    <div className='container w-full h-full'>
+    <div className='container w-full h-full mx-auto'>
       <h1>Whiteboard</h1>
       <canvas ref={canvasRef}></canvas>
     </div>
