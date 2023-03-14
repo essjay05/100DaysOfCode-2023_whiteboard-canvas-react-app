@@ -10,6 +10,7 @@ const Board = () => {
       backgroundColor: `#dcdde1`,
       width: 1290,
       height: 500,
+      isDrawingMode: true
     })
 
     const circle = new fabric.Circle({
