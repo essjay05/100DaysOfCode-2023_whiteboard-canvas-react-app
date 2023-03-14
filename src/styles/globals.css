@@ -124,6 +124,23 @@ a {
   width: 100%;
 }
 
+.tools-container > * {
+  margin: 0 0.5rem;
+}
+
+.tool-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.tool-wrapper label {
+  margin-right: 0.5rem;
+}
+
+.tool-wrapper #PenColor {
+  background-color: transparent;
+}
+
 .whiteboard canvas,
 .tools-container {
   border-radius: var(--border-radius);
