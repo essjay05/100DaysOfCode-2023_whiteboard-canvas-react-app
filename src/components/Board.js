@@ -13,15 +13,7 @@ const Board = () => {
       isDrawingMode: true
     })
 
-    const circle = new fabric.Circle({
-      radius: 20,
-      fill: `#009432`,
-      left: 50,
-      right: 50,
-      top: 50,
-    })
-
-    canvas.add(circle)
+    canvas.add()
   }, [])
 
   return (
