@@ -54,6 +54,8 @@
   --blue-color: #0652dd;
   --teal-color: #079992;
   --purple-color: #5f27cd;
+
+  --default-transition: 0.3s ease-in-out;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -117,7 +119,7 @@ a {
 }
 
 .tools-container {
-  margin: 1rem 0;
+  margin: 1rem auto;
   background: var(--white-color);
   color: var(--dark-grey-color);
   padding: 1rem;
@@ -128,9 +130,12 @@ a {
   margin: 0 0.5rem;
 }
 
-.tool-wrapper {
+.tools-wrapper,
+.tool-wrapper,
+.btn-actions {
   display: flex;
   align-items: center;
+  margin-bottom: 1rem;
 }
 
 .tool-wrapper label {
@@ -141,13 +146,65 @@ a {
   background-color: transparent;
 }
 
-.whiteboard canvas,
+canvas,
+.canvas-container,
 .tools-container {
   border-radius: var(--border-radius);
+  margin: 1rem auto 2rem;
+}
+
+.tools-container button {
+  color: var(--white-color);
+  background-color: var(--blue-color);
+  padding: 0.75rem;
+  transition: var(--default-transition);
+  border-radius: var(--border-radius);
+}
+
+.btn-actions > * {
+  margin: 0 0.5rem;
+}
+
+button.green,
+.button.green {
+  background-color: var(--green-color);
+}
+
+button.red,
+.button.red {
+  background-color: var(--red-color);
+}
+
+button:hover,
+button:focus,
+.button:hover,
+.button:focus {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.toggle-checkbox {
+  transition: var(--default-transition);
+}
+
+.toggle-checkbox:checked {
+  @apply: right-0 border-green-400;
+  right: 0;
+  border-color: #68d391;
+}
+.toggle-checkbox:checked + .toggle-label {
+  @apply: bg-green-400;
+  background-color: #68d391;
 }
 
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .tools-container {
+    align-items: center;
   }
 }
