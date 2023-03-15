@@ -123,7 +123,6 @@ a {
   background: var(--white-color);
   color: var(--dark-grey-color);
   padding: 1rem;
-  width: 100%;
 }
 
 .tools-container > * {
@@ -200,11 +199,5 @@ button:focus,
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
-  }
-}
-
-@media screen and (max-width: 600px) {
-  .tools-container {
-    align-items: center;
   }
 }

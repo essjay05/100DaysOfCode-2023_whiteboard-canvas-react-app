@@ -64,6 +64,22 @@ const Board = () => {
     }
   }
 
+  // // Keyboard event listeners for undo/redo actions
+  // document.addEventListener('keyup', ({ keyCode, ctrlKey } = event) => {
+  //   // Check Ctrl key is pressed.
+  //   if (!ctrlKey) {
+  //     return
+  //   }
+  //   // Check pressed button is Z - Ctrl+Z.
+  //   if (keyCode === 90) {
+  //     fabricCanvas.undo()
+  //   }
+  //   // Check pressed button is Y - Ctrl+Y.
+  //   if (keyCode === 89) {
+  //     fabricCanvas.redo()
+  //   }
+  // })
+
   const toggleErase = () => {
     if (fabricCanvas && toggleEraser) {
       fabricCanvas.freeDrawingBrush.color = penColor
@@ -81,29 +97,11 @@ const Board = () => {
       <h1 className='mt-6'>
         <strong>Whiteboard</strong>
       </h1>
-      <canvas ref={canvasRef} className='mx-auto'></canvas>
-      <section className='tools-container w-full mx-auto'>
+      <section className='tools-container w-11/12 mx-auto'>
         <h2 className='py-2'>
           <strong>Whiteboard Tools:</strong>
         </h2>
         <div className='tools-wrapper flex flex-wrap space-x-5'>
-          <div className='tool-wrapper'>
-            <div class='relative inline-block w-10 align-middle select-none transition duration-200 ease-in'>
-              <input 
-                onChange={() => toggleErase()}
-                type='checkbox' 
-                name='toggle' 
-                id='toggle'
-                className='toggle-checkbox absolute block w-6 h-6 rounded-full bg-white border-4 appearance-none cursor-pointer'/>
-              <label
-                for='toggle' 
-                className='toggle-label block overflow-hidden h-6 rounded-full bg-gray-300 cursor-pointer'>
-              </label>
-            </div>
-            <label for='toggle'>
-              <strong>Toggle Eraser</strong>
-            </label>
-          </div>
           <div className='tool-wrapper'>
             <label htmlFor='PenWidth'>
               <strong>Stylus Width:</strong>
@@ -130,6 +128,23 @@ const Board = () => {
               min={1}
               max={30}/>
           </div>
+          <div className='tool-wrapper'>
+            <div class='relative inline-block w-10 align-middle select-none transition duration-200 ease-in'>
+              <input 
+                onChange={() => toggleErase()}
+                type='checkbox' 
+                name='toggle' 
+                id='toggle'
+                className='toggle-checkbox absolute block w-6 h-6 rounded-full bg-white border-4 appearance-none cursor-pointer'/>
+              <label
+                for='toggle' 
+                className='toggle-label block overflow-hidden h-6 rounded-full bg-gray-300 cursor-pointer'>
+              </label>
+            </div>
+            <label for='toggle'>
+              <strong>Toggle Eraser</strong>
+            </label>
+          </div>
           <div className='btn-actions'>
             <button 
               id='DownloadBoard'
@@ -145,10 +160,26 @@ const Board = () => {
               className='red'>
               Clear Whiteboard
             </button>
+            {/* <div className='undo-btns'>
+              <button 
+                id='DownloadBoard'
+                onClick={() => fabricCanvas.undo()}
+                type='button'
+                className='green'>
+                Undo
+              </button>
+              <button 
+                id='DownloadBoard'
+                onClick={() => fabricCanvas.redo()}
+                type='button'
+                className='red'>
+                Redo
+              </button>
+            </div> */}
           </div>
-          
         </div>
       </section>
+      <canvas ref={canvasRef} className='mx-auto'></canvas>
     </div>
   )
 }
