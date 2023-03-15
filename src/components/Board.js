@@ -93,11 +93,8 @@ const Board = () => {
   }
 
   return (
-    <div className='whiteboard container w-full h-full mx-auto'>
-      <h1 className='mt-6'>
-        <strong>Whiteboard</strong>
-      </h1>
-      <section className='tools-container w-11/12 mx-auto'>
+    <div className='whiteboard container w-full h-full mx-auto mt-11 pt-5'>
+      <section className='tools-container w-11/12 mx-auto mt-11'>
         <h2 className='py-2'>
           <strong>Whiteboard Tools:</strong>
         </h2>
@@ -129,7 +126,7 @@ const Board = () => {
               max={30}/>
           </div>
           <div className='tool-wrapper'>
-            <div class='relative inline-block w-10 align-middle select-none transition duration-200 ease-in'>
+            <div className='relative inline-block w-10 align-middle select-none transition duration-200 ease-in'>
               <input 
                 onChange={() => toggleErase()}
                 type='checkbox' 
@@ -137,11 +134,11 @@ const Board = () => {
                 id='toggle'
                 className='toggle-checkbox absolute block w-6 h-6 rounded-full bg-white border-4 appearance-none cursor-pointer'/>
               <label
-                for='toggle' 
+                htmlFor='toggle' 
                 className='toggle-label block overflow-hidden h-6 rounded-full bg-gray-300 cursor-pointer'>
               </label>
             </div>
-            <label for='toggle'>
+            <label htmlFor='toggle'>
               <strong>Toggle Eraser</strong>
             </label>
           </div>
