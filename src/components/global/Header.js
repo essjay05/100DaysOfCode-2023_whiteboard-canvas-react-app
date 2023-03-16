@@ -3,11 +3,12 @@ import PenAndPaper from './icons/PenAndPaper'
 
 const Header = () => {
   return (
-    <header>
+    <header className='flex flex-row justify-between'>
       <div className='brand-container flex flex-row align-middle font-semibold'>
         <PenAndPaper></PenAndPaper>
         <h1>Joy-OAT Whiteboard</h1>
       </div>
+      <a href='#Contact'>Contact</a>
     </header>
   )
 }

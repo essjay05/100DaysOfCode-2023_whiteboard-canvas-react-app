@@ -1,5 +1,7 @@
-import React, { useRef, useEffect, useState } from 'react'
+import { useRef, useEffect, useState } from 'react'
 import { fabric } from 'fabric'
+
+import DownloadArrow from './global/icons/DownloadArrow'
 
 const Board = () => {
 
@@ -93,7 +95,7 @@ const Board = () => {
   }
 
   return (
-    <div className='whiteboard container w-full h-full mx-auto mt-11 pt-5'>
+    <div className='whiteboard container w-full h-full mx-auto mt-11'>
       <section className='tools-container w-11/12 mx-auto mt-11'>
         <h2 className='py-2'>
           <strong>Whiteboard Tools:</strong>
@@ -147,15 +149,15 @@ const Board = () => {
               id='DownloadBoard'
               onClick={() => downloadBoard()}
               type='button'
-              className='green'>
-              Download Whiteboard
+              className='green flex align-middle'>
+              <DownloadArrow/>&nbsp;Whiteboard
             </button>
             <button 
               id='DownloadBoard'
               onClick={() => clearCanvas()}
               type='button'
               className='red'>
-              Clear Whiteboard
+              Clear Board
             </button>
             {/* <div className='undo-btns'>
               <button 

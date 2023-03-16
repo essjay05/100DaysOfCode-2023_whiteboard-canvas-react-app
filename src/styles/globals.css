@@ -124,6 +124,13 @@ header {
 a {
   color: inherit;
   text-decoration: none;
+  transition: var(--default-transition);
+}
+
+a:hover,
+a:focus {
+  color: var(--teal-color);
+  text-decoration: underline;
 }
 
 .tools-container {
